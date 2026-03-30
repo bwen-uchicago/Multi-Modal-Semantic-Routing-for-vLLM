@@ -205,3 +205,13 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Project-specific
+.env
+data/synthetic/**/*.wav
+data/synthetic/**/*.mp3
+data/synthetic/**/*.flac
+# Keep configs and annotations
+!data/synthetic/**/run_config.json
+!data/synthetic/**/manifest.json
+!data/synthetic/**/annotations.json

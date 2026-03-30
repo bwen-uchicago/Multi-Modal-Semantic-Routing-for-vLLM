@@ -1,0 +1,53 @@
+{
+  "run_id": "qwen3tts_20260330_001",
+  "annotator": "Bo Wen",
+  "annotation_date": "2026-03-30",
+  "overall_notes": "Pilot run with default parameters. Some voices too dramatic, some accents not distinct enough.",
+  "voice_ratings": {
+    "vivian": {
+      "accent_quality": "poor",
+      "issue": "too dramatic/exaggerated delivery",
+      "action": "try lower temperature/top_p"
+    },
+    "serena": {
+      "accent_quality": "good",
+      "issue": null,
+      "action": null
+    },
+    "uncle_fu": {
+      "accent_quality": "poor",
+      "issue": "too dramatic/exaggerated delivery",
+      "action": "try lower temperature/top_p"
+    },
+    "dylan": {
+      "accent_quality": "good",
+      "issue": null,
+      "action": null
+    },
+    "eric": {
+      "accent_quality": "poor",
+      "issue": "too dramatic/exaggerated delivery",
+      "action": "try lower temperature/top_p"
+    },
+    "ono_anna": {
+      "accent_quality": "good",
+      "issue": null,
+      "action": null
+    },
+    "sohee": {
+      "accent_quality": "poor",
+      "issue": "too standard English, accent not distinct enough",
+      "action": "may need different model or voice clone approach for Korean accent"
+    },
+    "ryan": {
+      "accent_quality": "poor",
+      "issue": "too dramatic/exaggerated for a native English control",
+      "action": "try lower temperature/top_p for more neutral delivery"
+    },
+    "aiden": {
+      "accent_quality": "good",
+      "issue": null,
+      "action": null
+    }
+  }
+}

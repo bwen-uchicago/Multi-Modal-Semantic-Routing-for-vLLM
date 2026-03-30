@@ -1,0 +1,25 @@
+# Progress Log
+# Format: [DATE SESSION N] STATUS — Brief title
+---
+[2026-03-30 SESSION 1] COMPLETED — Repo setup + first TTS pilot
+## What was done
+- Created repo scaffolding (README, LICENSE Apache 2.0, ACKNOWLEDGMENTS)
+- Set up SSH key + git identity for t-9bwen@uchicago.edu
+- Logged into NERC MGHPCC OpenShift cluster (H100 GPUs, 8 GPU quota)
+- Cleaned old Qwen2.5 models from PVC (freed 39GB)
+- Deployed Qwen3-TTS-12Hz-1.7B-CustomVoice via vLLM-Omni on H100
+- Generated 90 pilot samples (9 voices × 10 sentences)
+- Sent audio samples to Bo for human evaluation
+
+## Human Feedback (Bo)
+- korean (sohee): too standard English, not enough accent
+- vivian, uncle_fu, eric, ryan: too dramatic/exaggerated
+- serena, dylan, ono_anna, aiden: good quality
+- ACTION: investigate generation parameters (top_p, temperature) to reduce drama
+- ACTION: reorganize data folder with per-run configs and annotations
+
+## Final state
+- Cluster: qwen3-tts pod running (1 H100)
+- Port forward: localhost:8091 → qwen3-tts:8000
+- Next: set up harness, reorganize data, try Voxtral TTS
+---
