@@ -1,0 +1,51 @@
+{
+  "run_id": "voxtral_20260330_001",
+  "timestamp": "2026-03-30T22:38:17.025714Z",
+  "model": "mistralai/Voxtral-4B-TTS-2603",
+  "serving": "vLLM-Omni v0.18.0",
+  "hardware": "NVIDIA H100 80GB HBM3",
+  "voices": {
+    "hi_female": {
+      "accent": "hindi",
+      "native_lang": "Hindi"
+    },
+    "hi_male": {
+      "accent": "hindi",
+      "native_lang": "Hindi"
+    },
+    "es_female": {
+      "accent": "spanish",
+      "native_lang": "Spanish"
+    },
+    "es_male": {
+      "accent": "spanish",
+      "native_lang": "Spanish"
+    },
+    "it_female": {
+      "accent": "italian",
+      "native_lang": "Italian"
+    },
+    "it_male": {
+      "accent": "italian",
+      "native_lang": "Italian"
+    },
+    "neutral_male": {
+      "accent": "native_english",
+      "native_lang": "English"
+    },
+    "casual_female": {
+      "accent": "native_english",
+      "native_lang": "English"
+    }
+  },
+  "scenarios": [
+    "restaurant",
+    "hospital",
+    "bank",
+    "telecom"
+  ],
+  "sentences_per_scenario": 10,
+  "total_sentences": 40,
+  "total_samples": 320,
+  "successful": 320
+}
