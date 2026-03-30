@@ -1,6 +1,6 @@
 # Multi-Modal Semantic Routing for vLLM: Accent-Aware Speech Recognition via TTS-Synthesized Training Data
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![NAIRR](https://img.shields.io/badge/NAIRR-Core%20AI%20Track-blue)](https://nairrpilot.org/)
 
 ## Overview
@@ -37,7 +37,7 @@ Building accent classifiers and accent-adapted STT models traditionally requires
 
 ### Our Solution: Synthetic Data Generation
 
-We observe that modern multilingual TTS models (e.g., XTTS, Bark, CosyVoice) inherently capture accent characteristics. When a Russian-language voice model is prompted to speak English text, the resulting audio naturally exhibits Russian-accented English pronunciation patterns. This insight enables a scalable data generation pipeline:
+We observe that modern multilingual TTS models inherently capture accent characteristics. When a voice model trained on a particular language is prompted to speak English text, the resulting audio naturally exhibits accented English pronunciation patterns. This insight enables a scalable data generation pipeline:
 
 ```
 ┌─────────────┐     ┌──────────────────┐     ┌─────────────────────┐
@@ -150,7 +150,7 @@ If you use this work, please cite:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
