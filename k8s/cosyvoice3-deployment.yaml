@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cosyvoice3
+  labels:
+    app: cosyvoice3
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: cosyvoice3
+  template:
+    metadata:
+      labels:
+        app: cosyvoice3
+    spec:
+      tolerations:
+      - key: nvidia.com/gpu.product
+        operator: Equal
+        value: NVIDIA-H100-80GB-HBM3
+        effect: NoSchedule
+      containers:
+      - name: vllm-omni
+        image: vllm/vllm-omni:v0.18.0
+        command: ["/bin/sh", "-c"]
+        args:
+        - |
+          pip install git+https://github.com/vllm-project/vllm-omni.git --upgrade && \
+          export PATH="/tmp/.local/bin:$PATH" && \
+          STAGE_CFG=$(python3 -c "import vllm_omni, os; print(os.path.join(os.path.dirname(vllm_omni.__file__), 'model_executor/stage_configs/cosyvoice3.yaml'))") && \
+          echo "Stage config: $STAGE_CFG" && \
+          vllm serve FunAudioLLM/Fun-CosyVoice3-0.5B-2512 --omni \
+            --stage-configs-path "$STAGE_CFG" \
+            --host 0.0.0.0 --port 8000 --served-model-name cosyvoice3 \
+            --trust-remote-code --enforce-eager
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        env:
+        - name: HOME
+          value: /tmp
+        - name: HF_HOME
+          value: /tmp/hf_home
+        - name: NUMBA_CACHE_DIR
+          value: /tmp/numba_cache
+        - name: MPLCONFIGDIR
+          value: /tmp/matplotlib
+        resources:
+          requests:
+            cpu: "4"
+            memory: 16Gi
+            nvidia.com/gpu: "1"
+          limits:
+            cpu: "8"
+            memory: 32Gi
+            nvidia.com/gpu: "1"
+        volumeMounts:
+        - name: shm
+          mountPath: /dev/shm
+      volumes:
+      - name: shm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 8Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cosyvoice3
+  labels:
+    app: cosyvoice3
+spec:
+  selector:
+    app: cosyvoice3
+  ports:
+  - port: 8000
+    targetPort: 8000
+    protocol: TCP
+    name: http
+  type: ClusterIP
