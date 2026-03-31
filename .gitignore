@@ -208,10 +208,17 @@ __marimo__/
 
 # Project-specific
 .env
-data/synthetic/**/*.wav
-data/synthetic/**/*.mp3
-data/synthetic/**/*.flac
+
+# Large bulk generation datasets (exclude audio)
+data/synthetic/qwen3tts_20260330_001/**/*.wav
+data/synthetic/qwen3tts_20260330_002/**/*.wav
+data/synthetic/voxtral_20260330_001/**/*.wav
+
 # Keep configs and annotations
 !data/synthetic/**/run_config.json
 !data/synthetic/**/manifest.json
 !data/synthetic/**/annotations.json
+
+# Keep small test/tuning samples as experiment evidence
+# (tuning_test, tuning_test_v2, fish_clone_test, fish_speech_test, 
+#  qwen3_clone_test, crosslingual_test are small enough to commit)
