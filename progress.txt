@@ -5,21 +5,56 @@
 ## What was done
 - Created repo scaffolding (README, LICENSE Apache 2.0, ACKNOWLEDGMENTS)
 - Set up SSH key + git identity for t-9bwen@uchicago.edu
-- Logged into NERC MGHPCC OpenShift cluster (H100 GPUs, 8 GPU quota)
-- Cleaned old Qwen2.5 models from PVC (freed 39GB)
 - Deployed Qwen3-TTS-12Hz-1.7B-CustomVoice via vLLM-Omni on H100
 - Generated 90 pilot samples (9 voices × 10 sentences)
-- Sent audio samples to Bo for human evaluation
+- Deployed Voxtral TTS, generated 560 samples (14 voices × 40 sentences)
+- Set up repo harness (AGENTS.md, progress.txt, data organization rules)
+---
+[2026-03-30 SESSION 2] COMPLETED — Parameter tuning + new model evaluation
+## What was done
+- Qwen3-TTS instruction tuning: Chinese instructions >> English instructions
+  Best: "你在跟餐馆打电话，速度快一点，带着chinglish的口音。"
+- Voxtral speed parameter testing: speed>1.0 degrades quality (time-stretch artifacts)
+- Deployed Fish Speech S2 Pro (fixed 4 rounds of dependency issues)
+- Deployed CosyVoice3 (failed: empty config.json on HF, then version mismatch)
+- Opened issues #1 (Qwen3), #2 (Voxtral), #3 (backlog models), #4 (Fish Speech)
+- CosyVoice3 research documented in docs/cosyvoice3-research.md
 
 ## Human Feedback (Bo)
-- korean (sohee): too standard English, not enough accent
-- vivian, uncle_fu, eric, ryan: too dramatic/exaggerated
-- serena, dylan, ono_anna, aiden: good quality
-- ACTION: investigate generation parameters (top_p, temperature) to reduce drama
-- ACTION: reorganize data folder with per-run configs and annotations
+- Qwen3 Chinese instruction "chinglish_fast" = best for Mandarin accent
+- Voxtral speed parameter = fundamental issue, no sweet spot
+- Fish Speech clone = only clones timbre, not accent
+---
+[2026-03-31 SESSION 3] COMPLETED — Voice clone + cross-lingual experiments
+## What was done
+- Downloaded Speech Accent Archive reference audio (Hindi, Mandarin, Spanish, Italian)
+- Fish Speech voice clone from accented English speakers → accent not preserved
+- Qwen3-TTS Base voice clone test → slightly better but ref_text leaks into output
+- Generated native language reference audio (Chinese, Japanese) via Qwen3-TTS
+- Fish Speech cross-lingual test (native language ref → English output)
+- Tested inline tags: [with strong accent], [with strong Chinese accent]
+- Committed all experiment audio as evidence, updated all issues
 
-## Final state
-- Cluster: qwen3-tts pod running (1 H100)
-- Port forward: localhost:8091 → qwen3-tts:8000
-- Next: set up harness, reorganize data, try Voxtral TTS
+## Human Feedback (Bo)
+- Fish Speech clone: only timbre, no accent → not suitable for our use case
+- Qwen3 Base clone: slightly better than Fish but ref_text fragments leak
+- Cross-lingual Fish Speech: not native English but accent not accurate either
+- Qwen3 reference audio has electrical noise artifacts
+- Conclusion: Qwen3 CustomVoice + Chinese instruction still best approach
+- Fish Speech inline accent tags have minimal effect
+
+## Current Model Status
+| Model | Status | Best Use Case |
+|---|---|---|
+| Qwen3-TTS CustomVoice | ✅ Best | Mandarin + Japanese accent (with Chinese instruction) |
+| Qwen3-TTS Base | ⚠️ Limited | Voice clone, but ref_text alignment issues |
+| Voxtral TTS | ❌ Blocked | Preset cross-lingual too slow, speed param breaks quality |
+| Fish Speech S2 Pro | ❌ Not suitable | Clone timbre only, no accent; inline tags ineffective |
+| CosyVoice3 | ❌ Deploy failed | Empty config.json + version mismatch |
+
+## Next Steps
+- Need new approach for Hindi, Mexican Spanish, Italian accents
+- Consider: Qwen3 VoiceDesign mode to describe accented voice characteristics
+- Consider: Fine-tune a model on real accented speech data
+- Consider: Use different TTS architecture entirely (e.g., XTTS-v2)
 ---
