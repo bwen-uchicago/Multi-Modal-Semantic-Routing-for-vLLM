@@ -27,9 +27,13 @@ spec:
         - |
           pip install git+https://github.com/vllm-project/vllm-omni.git --upgrade && \
           export PATH="/tmp/.local/bin:$PATH" && \
-          STAGE_CFG=$(python3 -c "import vllm_omni, os; print(os.path.join(os.path.dirname(vllm_omni.__file__), 'model_executor/stage_configs/cosyvoice3.yaml'))") && \
+          echo "Downloading model..." && \
+          huggingface-cli download FunAudioLLM/Fun-CosyVoice3-0.5B-2512 --local-dir /tmp/cosyvoice3-model && \
+          echo '{"model_type": "cosyvoice3"}' > /tmp/cosyvoice3-model/config.json && \
+          echo "Patched config.json with model_type=cosyvoice3" && \
+          STAGE_CFG=$(find /tmp/.local -path "*/stage_configs/cosyvoice3.yaml" -print -quit) && \
           echo "Stage config: $STAGE_CFG" && \
-          vllm serve FunAudioLLM/Fun-CosyVoice3-0.5B-2512 --omni \
+          vllm serve /tmp/cosyvoice3-model --omni \
             --stage-configs-path "$STAGE_CFG" \
             --host 0.0.0.0 --port 8000 --served-model-name cosyvoice3 \
             --trust-remote-code --enforce-eager
