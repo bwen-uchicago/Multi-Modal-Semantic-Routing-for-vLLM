@@ -29,6 +29,7 @@ spec:
           export PATH="/tmp/.local/bin:$PATH" && \
           huggingface-cli download Qwen/Qwen3-TTS-12Hz-1.7B-Base --local-dir /models/Qwen3-TTS-12Hz-1.7B-Base && \
           vllm serve /models/Qwen3-TTS-12Hz-1.7B-Base --omni --task-type Base \
+            --api-key $(VLLM_API_KEY) \
             --host 0.0.0.0 --port 8000 --served-model-name qwen3-tts-base \
             --trust-remote-code --enforce-eager
         ports:
@@ -46,6 +47,11 @@ spec:
           value: /tmp/matplotlib
         - name: VLLM_ALLOW_LONG_MAX_MODEL_LEN
           value: "1"
+        - name: VLLM_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: vllm-api-key
+              key: api-key
         resources:
           requests:
             cpu: "4"
