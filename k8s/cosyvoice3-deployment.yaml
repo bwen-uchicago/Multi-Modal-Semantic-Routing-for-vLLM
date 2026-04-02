@@ -35,6 +35,7 @@ spec:
           echo "Stage config: $STAGE_CFG" && \
           vllm serve /tmp/cosyvoice3-model --omni \
             --stage-configs-path "$STAGE_CFG" \
+            --api-key $(VLLM_API_KEY) \
             --host 0.0.0.0 --port 8000 --served-model-name cosyvoice3 \
             --trust-remote-code --enforce-eager
         ports:
@@ -50,6 +51,11 @@ spec:
           value: /tmp/numba_cache
         - name: MPLCONFIGDIR
           value: /tmp/matplotlib
+        - name: VLLM_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: vllm-api-key
+              key: api-key
         resources:
           requests:
             cpu: "4"

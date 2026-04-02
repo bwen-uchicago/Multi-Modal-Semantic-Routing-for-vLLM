@@ -28,6 +28,7 @@ spec:
           pip install huggingface_hub && \
           huggingface-cli download Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice --local-dir /models/Qwen3-TTS-12Hz-1.7B-CustomVoice && \
           vllm serve /models/Qwen3-TTS-12Hz-1.7B-CustomVoice --omni --task-type CustomVoice \
+            --api-key $(VLLM_API_KEY) \
             --host 0.0.0.0 --port 8000 --served-model-name qwen3-tts \
             --trust-remote-code --enforce-eager
         ports:
@@ -43,6 +44,11 @@ spec:
           value: /tmp/numba_cache
         - name: MPLCONFIGDIR
           value: /tmp/matplotlib
+        - name: VLLM_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: vllm-api-key
+              key: api-key
         resources:
           requests:
             cpu: "4"
