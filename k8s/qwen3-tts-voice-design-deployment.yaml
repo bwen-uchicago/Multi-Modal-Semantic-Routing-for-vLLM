@@ -1,0 +1,99 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qwen3-tts-voice-design
+  labels:
+    app: qwen3-tts-voice-design
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: qwen3-tts-voice-design
+  template:
+    metadata:
+      labels:
+        app: qwen3-tts-voice-design
+    spec:
+      tolerations:
+      - key: nvidia.com/gpu.product
+        operator: Equal
+        value: NVIDIA-H100-80GB-HBM3
+        effect: NoSchedule
+      containers:
+      - name: vllm-omni
+        image: vllm/vllm-omni:v0.18.0
+        command: ["/bin/sh", "-c"]
+        args:
+        - |
+          pip install huggingface_hub && \
+          huggingface-cli download Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign --local-dir /models/Qwen3-TTS-12Hz-1.7B-VoiceDesign && \
+          vllm serve /models/Qwen3-TTS-12Hz-1.7B-VoiceDesign --omni --task-type VoiceDesign \
+            --host 0.0.0.0 --port 8000 --served-model-name qwen3-tts-voice-design \
+            --trust-remote-code --enforce-eager
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        env:
+        - name: HOME
+          value: /tmp
+        - name: HF_HOME
+          value: /models/hf_home
+        - name: NUMBA_CACHE_DIR
+          value: /tmp/numba_cache
+        - name: MPLCONFIGDIR
+          value: /tmp/matplotlib
+        resources:
+          requests:
+            cpu: "4"
+            memory: 16Gi
+            nvidia.com/gpu: "1"
+          limits:
+            cpu: "8"
+            memory: 32Gi
+            nvidia.com/gpu: "1"
+        volumeMounts:
+        - name: model-cache
+          mountPath: /models
+        - name: shm
+          mountPath: /dev/shm
+      volumes:
+      - name: model-cache
+        persistentVolumeClaim:
+          claimName: vllm-model-cache
+      - name: shm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 8Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: qwen3-tts-voice-design
+  labels:
+    app: qwen3-tts-voice-design
+spec:
+  selector:
+    app: qwen3-tts-voice-design
+  ports:
+  - port: 8000
+    targetPort: 8000
+    protocol: TCP
+    name: http
+  type: ClusterIP
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: qwen3-tts-voice-design
+  labels:
+    app: qwen3-tts-voice-design
+spec:
+  to:
+    kind: Service
+    name: qwen3-tts-voice-design
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
