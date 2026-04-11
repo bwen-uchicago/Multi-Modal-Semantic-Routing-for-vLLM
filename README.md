@@ -144,7 +144,7 @@ If you use this work, please cite:
   title={Multi-Modal Semantic Routing for vLLM: Accent-Aware Speech Recognition via TTS-Synthesized Training Data},
   author={University of Chicago, Junchen Jiang Research Group},
   year={2026},
-  url={https://github.com/bwen-uchicago/Multi-Modal-Semantic-Routing-for-vLLM}
+  url={https://github.com/UChi-JCL/Multi-Modal-Semantic-Routing-for-vLLM}
 }
 ```
 
