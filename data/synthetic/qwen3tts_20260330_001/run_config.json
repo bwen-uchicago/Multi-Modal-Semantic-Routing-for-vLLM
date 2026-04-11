@@ -1,0 +1,30 @@
+{
+  "run_id": "qwen3tts_20260330_001",
+  "timestamp": "2026-03-30T21:06:00Z",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+  "serving": "vLLM-Omni v0.18.0",
+  "task_type": "CustomVoice",
+  "hardware": "NVIDIA H100 80GB HBM3 (NERC MGHPCC)",
+  "api_endpoint": "/v1/audio/speech",
+  "generation_params": {
+    "response_format": "wav",
+    "temperature": "default (not specified)",
+    "top_p": "default (not specified)",
+    "note": "Used default vLLM-Omni parameters — no explicit temperature/top_p override"
+  },
+  "voices": {
+    "vivian": {"native_language": "Chinese (Mandarin)", "accent_label": "mandarin"},
+    "serena": {"native_language": "Chinese (Mandarin)", "accent_label": "mandarin"},
+    "uncle_fu": {"native_language": "Chinese (Mandarin)", "accent_label": "mandarin"},
+    "dylan": {"native_language": "Chinese (Beijing Dialect)", "accent_label": "mandarin_beijing"},
+    "eric": {"native_language": "Chinese (Sichuan Dialect)", "accent_label": "mandarin_sichuan"},
+    "ono_anna": {"native_language": "Japanese", "accent_label": "japanese"},
+    "sohee": {"native_language": "Korean", "accent_label": "korean"},
+    "ryan": {"native_language": "English", "accent_label": "native_english"},
+    "aiden": {"native_language": "English", "accent_label": "native_english"}
+  },
+  "sentences": 10,
+  "total_samples": 90,
+  "successful_samples": 90,
+  "avg_generation_time_s": 1.3
+}

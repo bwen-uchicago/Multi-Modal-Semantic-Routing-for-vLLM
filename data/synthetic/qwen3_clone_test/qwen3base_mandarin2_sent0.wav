@@ -1,0 +1,1 @@
+{"error":{"message":"Reference audio too long (38.3s). Maximum 30s supported — use a shorter clip.","type":"BadRequestError","param":null,"code":400}}

@@ -1,0 +1,44 @@
+{
+  "run_id": "qwen3tts_20260330_002",
+  "timestamp": "2026-03-30T22:23:52.762160Z",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+  "serving": "vLLM-Omni v0.18.0",
+  "hardware": "NVIDIA H100 80GB HBM3",
+  "voices": {
+    "vivian": {
+      "accent": "mandarin",
+      "native_lang": "Chinese (Mandarin)"
+    },
+    "serena": {
+      "accent": "mandarin",
+      "native_lang": "Chinese (Mandarin)"
+    },
+    "uncle_fu": {
+      "accent": "mandarin",
+      "native_lang": "Chinese (Mandarin)"
+    },
+    "dylan": {
+      "accent": "mandarin",
+      "native_lang": "Chinese (Beijing)"
+    },
+    "ono_anna": {
+      "accent": "japanese",
+      "native_lang": "Japanese"
+    },
+    "aiden": {
+      "accent": "native_english",
+      "native_lang": "English"
+    }
+  },
+  "instructions": "Speak in a calm, natural, conversational tone.",
+  "scenarios": [
+    "restaurant",
+    "hospital",
+    "bank",
+    "telecom"
+  ],
+  "sentences_per_scenario": 10,
+  "total_sentences": 40,
+  "total_samples": 240,
+  "successful": 240
+}

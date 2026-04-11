@@ -1,0 +1,812 @@
+[
+  {
+    "voice": "vivian",
+    "accent": "mandarin",
+    "sentence_id": 0,
+    "text": "The weather forecast predicts heavy rain throughout the weekend.",
+    "file": "mandarin/vivian/sentence_00.wav",
+    "generation_time_s": 1.68,
+    "file_size_kb": 187.5
+  },
+  {
+    "voice": "vivian",
+    "accent": "mandarin",
+    "sentence_id": 1,
+    "text": "Could you please schedule a meeting for three thirty tomorrow afternoon?",
+    "file": "mandarin/vivian/sentence_01.wav",
+    "generation_time_s": 1.49,
+    "file_size_kb": 183.8
+  },
+  {
+    "voice": "vivian",
+    "accent": "mandarin",
+    "sentence_id": 2,
+    "text": "I've been studying artificial intelligence and machine learning for years.",
+    "file": "mandarin/vivian/sentence_02.wav",
+    "generation_time_s": 1.26,
+    "file_size_kb": 228.8
+  },
+  {
+    "voice": "vivian",
+    "accent": "mandarin",
+    "sentence_id": 3,
+    "text": "The restaurant on Fifth Avenue serves the best chocolate cake in town.",
+    "file": "mandarin/vivian/sentence_03.wav",
+    "generation_time_s": 1.68,
+    "file_size_kb": 236.3
+  },
+  {
+    "voice": "vivian",
+    "accent": "mandarin",
+    "sentence_id": 4,
+    "text": "She drove through the countryside enjoying the beautiful autumn leaves.",
+    "file": "mandarin/vivian/sentence_04.wav",
+    "generation_time_s": 1.45,
+    "file_size_kb": 217.5
+  },
+  {
+    "voice": "vivian",
+    "accent": "mandarin",
+    "sentence_id": 5,
+    "text": "We need to discuss the quarterly budget report before the deadline.",
+    "file": "mandarin/vivian/sentence_05.wav",
+    "generation_time_s": 1.34,
+    "file_size_kb": 225.0
+  },
+  {
+    "voice": "vivian",
+    "accent": "mandarin",
+    "sentence_id": 6,
+    "text": "The children were playing basketball in the park after school.",
+    "file": "mandarin/vivian/sentence_06.wav",
+    "generation_time_s": 1.09,
+    "file_size_kb": 180.0
+  },
+  {
+    "voice": "vivian",
+    "accent": "mandarin",
+    "sentence_id": 7,
+    "text": "Please remember to pick up some groceries on your way home tonight.",
+    "file": "mandarin/vivian/sentence_07.wav",
+    "generation_time_s": 1.4,
+    "file_size_kb": 206.3
+  },
+  {
+    "voice": "vivian",
+    "accent": "mandarin",
+    "sentence_id": 8,
+    "text": "The professor explained the theory of relativity in simple terms.",
+    "file": "mandarin/vivian/sentence_08.wav",
+    "generation_time_s": 1.23,
+    "file_size_kb": 210.0
+  },
+  {
+    "voice": "vivian",
+    "accent": "mandarin",
+    "sentence_id": 9,
+    "text": "Would you rather travel to Japan or visit the beaches in Thailand?",
+    "file": "mandarin/vivian/sentence_09.wav",
+    "generation_time_s": 1.37,
+    "file_size_kb": 191.3
+  },
+  {
+    "voice": "serena",
+    "accent": "mandarin",
+    "sentence_id": 0,
+    "text": "The weather forecast predicts heavy rain throughout the weekend.",
+    "file": "mandarin/serena/sentence_00.wav",
+    "generation_time_s": 1.05,
+    "file_size_kb": 168.8
+  },
+  {
+    "voice": "serena",
+    "accent": "mandarin",
+    "sentence_id": 1,
+    "text": "Could you please schedule a meeting for three thirty tomorrow afternoon?",
+    "file": "mandarin/serena/sentence_01.wav",
+    "generation_time_s": 1.09,
+    "file_size_kb": 176.3
+  },
+  {
+    "voice": "serena",
+    "accent": "mandarin",
+    "sentence_id": 2,
+    "text": "I've been studying artificial intelligence and machine learning for years.",
+    "file": "mandarin/serena/sentence_02.wav",
+    "generation_time_s": 1.44,
+    "file_size_kb": 206.3
+  },
+  {
+    "voice": "serena",
+    "accent": "mandarin",
+    "sentence_id": 3,
+    "text": "The restaurant on Fifth Avenue serves the best chocolate cake in town.",
+    "file": "mandarin/serena/sentence_03.wav",
+    "generation_time_s": 1.3,
+    "file_size_kb": 228.8
+  },
+  {
+    "voice": "serena",
+    "accent": "mandarin",
+    "sentence_id": 4,
+    "text": "She drove through the countryside enjoying the beautiful autumn leaves.",
+    "file": "mandarin/serena/sentence_04.wav",
+    "generation_time_s": 1.3,
+    "file_size_kb": 206.3
+  },
+  {
+    "voice": "serena",
+    "accent": "mandarin",
+    "sentence_id": 5,
+    "text": "We need to discuss the quarterly budget report before the deadline.",
+    "file": "mandarin/serena/sentence_05.wav",
+    "generation_time_s": 1.35,
+    "file_size_kb": 191.3
+  },
+  {
+    "voice": "serena",
+    "accent": "mandarin",
+    "sentence_id": 6,
+    "text": "The children were playing basketball in the park after school.",
+    "file": "mandarin/serena/sentence_06.wav",
+    "generation_time_s": 1.24,
+    "file_size_kb": 161.3
+  },
+  {
+    "voice": "serena",
+    "accent": "mandarin",
+    "sentence_id": 7,
+    "text": "Please remember to pick up some groceries on your way home tonight.",
+    "file": "mandarin/serena/sentence_07.wav",
+    "generation_time_s": 1.07,
+    "file_size_kb": 180.0
+  },
+  {
+    "voice": "serena",
+    "accent": "mandarin",
+    "sentence_id": 8,
+    "text": "The professor explained the theory of relativity in simple terms.",
+    "file": "mandarin/serena/sentence_08.wav",
+    "generation_time_s": 1.27,
+    "file_size_kb": 225.0
+  },
+  {
+    "voice": "serena",
+    "accent": "mandarin",
+    "sentence_id": 9,
+    "text": "Would you rather travel to Japan or visit the beaches in Thailand?",
+    "file": "mandarin/serena/sentence_09.wav",
+    "generation_time_s": 1.17,
+    "file_size_kb": 202.5
+  },
+  {
+    "voice": "uncle_fu",
+    "accent": "mandarin",
+    "sentence_id": 0,
+    "text": "The weather forecast predicts heavy rain throughout the weekend.",
+    "file": "mandarin/uncle_fu/sentence_00.wav",
+    "generation_time_s": 1.3,
+    "file_size_kb": 168.8
+  },
+  {
+    "voice": "uncle_fu",
+    "accent": "mandarin",
+    "sentence_id": 1,
+    "text": "Could you please schedule a meeting for three thirty tomorrow afternoon?",
+    "file": "mandarin/uncle_fu/sentence_01.wav",
+    "generation_time_s": 1.92,
+    "file_size_kb": 236.3
+  },
+  {
+    "voice": "uncle_fu",
+    "accent": "mandarin",
+    "sentence_id": 2,
+    "text": "I've been studying artificial intelligence and machine learning for years.",
+    "file": "mandarin/uncle_fu/sentence_02.wav",
+    "generation_time_s": 1.41,
+    "file_size_kb": 240.0
+  },
+  {
+    "voice": "uncle_fu",
+    "accent": "mandarin",
+    "sentence_id": 3,
+    "text": "The restaurant on Fifth Avenue serves the best chocolate cake in town.",
+    "file": "mandarin/uncle_fu/sentence_03.wav",
+    "generation_time_s": 1.41,
+    "file_size_kb": 202.5
+  },
+  {
+    "voice": "uncle_fu",
+    "accent": "mandarin",
+    "sentence_id": 4,
+    "text": "She drove through the countryside enjoying the beautiful autumn leaves.",
+    "file": "mandarin/uncle_fu/sentence_04.wav",
+    "generation_time_s": 1.38,
+    "file_size_kb": 236.3
+  },
+  {
+    "voice": "uncle_fu",
+    "accent": "mandarin",
+    "sentence_id": 5,
+    "text": "We need to discuss the quarterly budget report before the deadline.",
+    "file": "mandarin/uncle_fu/sentence_05.wav",
+    "generation_time_s": 1.12,
+    "file_size_kb": 161.3
+  },
+  {
+    "voice": "uncle_fu",
+    "accent": "mandarin",
+    "sentence_id": 6,
+    "text": "The children were playing basketball in the park after school.",
+    "file": "mandarin/uncle_fu/sentence_06.wav",
+    "generation_time_s": 1.32,
+    "file_size_kb": 213.8
+  },
+  {
+    "voice": "uncle_fu",
+    "accent": "mandarin",
+    "sentence_id": 7,
+    "text": "Please remember to pick up some groceries on your way home tonight.",
+    "file": "mandarin/uncle_fu/sentence_07.wav",
+    "generation_time_s": 1.09,
+    "file_size_kb": 161.3
+  },
+  {
+    "voice": "uncle_fu",
+    "accent": "mandarin",
+    "sentence_id": 8,
+    "text": "The professor explained the theory of relativity in simple terms.",
+    "file": "mandarin/uncle_fu/sentence_08.wav",
+    "generation_time_s": 1.55,
+    "file_size_kb": 273.8
+  },
+  {
+    "voice": "uncle_fu",
+    "accent": "mandarin",
+    "sentence_id": 9,
+    "text": "Would you rather travel to Japan or visit the beaches in Thailand?",
+    "file": "mandarin/uncle_fu/sentence_09.wav",
+    "generation_time_s": 1.52,
+    "file_size_kb": 198.8
+  },
+  {
+    "voice": "dylan",
+    "accent": "mandarin_beijing",
+    "sentence_id": 0,
+    "text": "The weather forecast predicts heavy rain throughout the weekend.",
+    "file": "mandarin_beijing/dylan/sentence_00.wav",
+    "generation_time_s": 0.89,
+    "file_size_kb": 142.5
+  },
+  {
+    "voice": "dylan",
+    "accent": "mandarin_beijing",
+    "sentence_id": 1,
+    "text": "Could you please schedule a meeting for three thirty tomorrow afternoon?",
+    "file": "mandarin_beijing/dylan/sentence_01.wav",
+    "generation_time_s": 1.01,
+    "file_size_kb": 161.3
+  },
+  {
+    "voice": "dylan",
+    "accent": "mandarin_beijing",
+    "sentence_id": 2,
+    "text": "I've been studying artificial intelligence and machine learning for years.",
+    "file": "mandarin_beijing/dylan/sentence_02.wav",
+    "generation_time_s": 1.8,
+    "file_size_kb": 191.3
+  },
+  {
+    "voice": "dylan",
+    "accent": "mandarin_beijing",
+    "sentence_id": 3,
+    "text": "The restaurant on Fifth Avenue serves the best chocolate cake in town.",
+    "file": "mandarin_beijing/dylan/sentence_03.wav",
+    "generation_time_s": 1.27,
+    "file_size_kb": 191.3
+  },
+  {
+    "voice": "dylan",
+    "accent": "mandarin_beijing",
+    "sentence_id": 4,
+    "text": "She drove through the countryside enjoying the beautiful autumn leaves.",
+    "file": "mandarin_beijing/dylan/sentence_04.wav",
+    "generation_time_s": 1.07,
+    "file_size_kb": 168.8
+  },
+  {
+    "voice": "dylan",
+    "accent": "mandarin_beijing",
+    "sentence_id": 5,
+    "text": "We need to discuss the quarterly budget report before the deadline.",
+    "file": "mandarin_beijing/dylan/sentence_05.wav",
+    "generation_time_s": 1.22,
+    "file_size_kb": 191.3
+  },
+  {
+    "voice": "dylan",
+    "accent": "mandarin_beijing",
+    "sentence_id": 6,
+    "text": "The children were playing basketball in the park after school.",
+    "file": "mandarin_beijing/dylan/sentence_06.wav",
+    "generation_time_s": 0.99,
+    "file_size_kb": 153.8
+  },
+  {
+    "voice": "dylan",
+    "accent": "mandarin_beijing",
+    "sentence_id": 7,
+    "text": "Please remember to pick up some groceries on your way home tonight.",
+    "file": "mandarin_beijing/dylan/sentence_07.wav",
+    "generation_time_s": 1.1,
+    "file_size_kb": 161.3
+  },
+  {
+    "voice": "dylan",
+    "accent": "mandarin_beijing",
+    "sentence_id": 8,
+    "text": "The professor explained the theory of relativity in simple terms.",
+    "file": "mandarin_beijing/dylan/sentence_08.wav",
+    "generation_time_s": 1.24,
+    "file_size_kb": 221.3
+  },
+  {
+    "voice": "dylan",
+    "accent": "mandarin_beijing",
+    "sentence_id": 9,
+    "text": "Would you rather travel to Japan or visit the beaches in Thailand?",
+    "file": "mandarin_beijing/dylan/sentence_09.wav",
+    "generation_time_s": 1.27,
+    "file_size_kb": 183.8
+  },
+  {
+    "voice": "eric",
+    "accent": "mandarin_sichuan",
+    "sentence_id": 0,
+    "text": "The weather forecast predicts heavy rain throughout the weekend.",
+    "file": "mandarin_sichuan/eric/sentence_00.wav",
+    "generation_time_s": 1.26,
+    "file_size_kb": 157.5
+  },
+  {
+    "voice": "eric",
+    "accent": "mandarin_sichuan",
+    "sentence_id": 1,
+    "text": "Could you please schedule a meeting for three thirty tomorrow afternoon?",
+    "file": "mandarin_sichuan/eric/sentence_01.wav",
+    "generation_time_s": 1.24,
+    "file_size_kb": 183.8
+  },
+  {
+    "voice": "eric",
+    "accent": "mandarin_sichuan",
+    "sentence_id": 2,
+    "text": "I've been studying artificial intelligence and machine learning for years.",
+    "file": "mandarin_sichuan/eric/sentence_02.wav",
+    "generation_time_s": 1.53,
+    "file_size_kb": 206.3
+  },
+  {
+    "voice": "eric",
+    "accent": "mandarin_sichuan",
+    "sentence_id": 3,
+    "text": "The restaurant on Fifth Avenue serves the best chocolate cake in town.",
+    "file": "mandarin_sichuan/eric/sentence_03.wav",
+    "generation_time_s": 1.64,
+    "file_size_kb": 228.8
+  },
+  {
+    "voice": "eric",
+    "accent": "mandarin_sichuan",
+    "sentence_id": 4,
+    "text": "She drove through the countryside enjoying the beautiful autumn leaves.",
+    "file": "mandarin_sichuan/eric/sentence_04.wav",
+    "generation_time_s": 1.23,
+    "file_size_kb": 187.5
+  },
+  {
+    "voice": "eric",
+    "accent": "mandarin_sichuan",
+    "sentence_id": 5,
+    "text": "We need to discuss the quarterly budget report before the deadline.",
+    "file": "mandarin_sichuan/eric/sentence_05.wav",
+    "generation_time_s": 1.18,
+    "file_size_kb": 221.3
+  },
+  {
+    "voice": "eric",
+    "accent": "mandarin_sichuan",
+    "sentence_id": 6,
+    "text": "The children were playing basketball in the park after school.",
+    "file": "mandarin_sichuan/eric/sentence_06.wav",
+    "generation_time_s": 1.13,
+    "file_size_kb": 176.3
+  },
+  {
+    "voice": "eric",
+    "accent": "mandarin_sichuan",
+    "sentence_id": 7,
+    "text": "Please remember to pick up some groceries on your way home tonight.",
+    "file": "mandarin_sichuan/eric/sentence_07.wav",
+    "generation_time_s": 0.93,
+    "file_size_kb": 153.8
+  },
+  {
+    "voice": "eric",
+    "accent": "mandarin_sichuan",
+    "sentence_id": 8,
+    "text": "The professor explained the theory of relativity in simple terms.",
+    "file": "mandarin_sichuan/eric/sentence_08.wav",
+    "generation_time_s": 1.27,
+    "file_size_kb": 206.3
+  },
+  {
+    "voice": "eric",
+    "accent": "mandarin_sichuan",
+    "sentence_id": 9,
+    "text": "Would you rather travel to Japan or visit the beaches in Thailand?",
+    "file": "mandarin_sichuan/eric/sentence_09.wav",
+    "generation_time_s": 1.1,
+    "file_size_kb": 176.3
+  },
+  {
+    "voice": "ono_anna",
+    "accent": "japanese",
+    "sentence_id": 0,
+    "text": "The weather forecast predicts heavy rain throughout the weekend.",
+    "file": "japanese/ono_anna/sentence_00.wav",
+    "generation_time_s": 1.48,
+    "file_size_kb": 165.0
+  },
+  {
+    "voice": "ono_anna",
+    "accent": "japanese",
+    "sentence_id": 1,
+    "text": "Could you please schedule a meeting for three thirty tomorrow afternoon?",
+    "file": "japanese/ono_anna/sentence_01.wav",
+    "generation_time_s": 1.05,
+    "file_size_kb": 180.0
+  },
+  {
+    "voice": "ono_anna",
+    "accent": "japanese",
+    "sentence_id": 2,
+    "text": "I've been studying artificial intelligence and machine learning for years.",
+    "file": "japanese/ono_anna/sentence_02.wav",
+    "generation_time_s": 1.23,
+    "file_size_kb": 176.3
+  },
+  {
+    "voice": "ono_anna",
+    "accent": "japanese",
+    "sentence_id": 3,
+    "text": "The restaurant on Fifth Avenue serves the best chocolate cake in town.",
+    "file": "japanese/ono_anna/sentence_03.wav",
+    "generation_time_s": 1.48,
+    "file_size_kb": 243.8
+  },
+  {
+    "voice": "ono_anna",
+    "accent": "japanese",
+    "sentence_id": 4,
+    "text": "She drove through the countryside enjoying the beautiful autumn leaves.",
+    "file": "japanese/ono_anna/sentence_04.wav",
+    "generation_time_s": 1.4,
+    "file_size_kb": 195.0
+  },
+  {
+    "voice": "ono_anna",
+    "accent": "japanese",
+    "sentence_id": 5,
+    "text": "We need to discuss the quarterly budget report before the deadline.",
+    "file": "japanese/ono_anna/sentence_05.wav",
+    "generation_time_s": 1.14,
+    "file_size_kb": 168.8
+  },
+  {
+    "voice": "ono_anna",
+    "accent": "japanese",
+    "sentence_id": 6,
+    "text": "The children were playing basketball in the park after school.",
+    "file": "japanese/ono_anna/sentence_06.wav",
+    "generation_time_s": 1.36,
+    "file_size_kb": 153.8
+  },
+  {
+    "voice": "ono_anna",
+    "accent": "japanese",
+    "sentence_id": 7,
+    "text": "Please remember to pick up some groceries on your way home tonight.",
+    "file": "japanese/ono_anna/sentence_07.wav",
+    "generation_time_s": 1.46,
+    "file_size_kb": 247.5
+  },
+  {
+    "voice": "ono_anna",
+    "accent": "japanese",
+    "sentence_id": 8,
+    "text": "The professor explained the theory of relativity in simple terms.",
+    "file": "japanese/ono_anna/sentence_08.wav",
+    "generation_time_s": 2.07,
+    "file_size_kb": 217.5
+  },
+  {
+    "voice": "ono_anna",
+    "accent": "japanese",
+    "sentence_id": 9,
+    "text": "Would you rather travel to Japan or visit the beaches in Thailand?",
+    "file": "japanese/ono_anna/sentence_09.wav",
+    "generation_time_s": 1.25,
+    "file_size_kb": 180.0
+  },
+  {
+    "voice": "sohee",
+    "accent": "korean",
+    "sentence_id": 0,
+    "text": "The weather forecast predicts heavy rain throughout the weekend.",
+    "file": "korean/sohee/sentence_00.wav",
+    "generation_time_s": 2.02,
+    "file_size_kb": 191.3
+  },
+  {
+    "voice": "sohee",
+    "accent": "korean",
+    "sentence_id": 1,
+    "text": "Could you please schedule a meeting for three thirty tomorrow afternoon?",
+    "file": "korean/sohee/sentence_01.wav",
+    "generation_time_s": 0.96,
+    "file_size_kb": 138.8
+  },
+  {
+    "voice": "sohee",
+    "accent": "korean",
+    "sentence_id": 2,
+    "text": "I've been studying artificial intelligence and machine learning for years.",
+    "file": "korean/sohee/sentence_02.wav",
+    "generation_time_s": 1.3,
+    "file_size_kb": 172.5
+  },
+  {
+    "voice": "sohee",
+    "accent": "korean",
+    "sentence_id": 3,
+    "text": "The restaurant on Fifth Avenue serves the best chocolate cake in town.",
+    "file": "korean/sohee/sentence_03.wav",
+    "generation_time_s": 1.34,
+    "file_size_kb": 236.3
+  },
+  {
+    "voice": "sohee",
+    "accent": "korean",
+    "sentence_id": 4,
+    "text": "She drove through the countryside enjoying the beautiful autumn leaves.",
+    "file": "korean/sohee/sentence_04.wav",
+    "generation_time_s": 1.32,
+    "file_size_kb": 210.0
+  },
+  {
+    "voice": "sohee",
+    "accent": "korean",
+    "sentence_id": 5,
+    "text": "We need to discuss the quarterly budget report before the deadline.",
+    "file": "korean/sohee/sentence_05.wav",
+    "generation_time_s": 1.01,
+    "file_size_kb": 157.5
+  },
+  {
+    "voice": "sohee",
+    "accent": "korean",
+    "sentence_id": 6,
+    "text": "The children were playing basketball in the park after school.",
+    "file": "korean/sohee/sentence_06.wav",
+    "generation_time_s": 0.98,
+    "file_size_kb": 138.8
+  },
+  {
+    "voice": "sohee",
+    "accent": "korean",
+    "sentence_id": 7,
+    "text": "Please remember to pick up some groceries on your way home tonight.",
+    "file": "korean/sohee/sentence_07.wav",
+    "generation_time_s": 1.02,
+    "file_size_kb": 153.8
+  },
+  {
+    "voice": "sohee",
+    "accent": "korean",
+    "sentence_id": 8,
+    "text": "The professor explained the theory of relativity in simple terms.",
+    "file": "korean/sohee/sentence_08.wav",
+    "generation_time_s": 1.55,
+    "file_size_kb": 187.5
+  },
+  {
+    "voice": "sohee",
+    "accent": "korean",
+    "sentence_id": 9,
+    "text": "Would you rather travel to Japan or visit the beaches in Thailand?",
+    "file": "korean/sohee/sentence_09.wav",
+    "generation_time_s": 1.27,
+    "file_size_kb": 213.8
+  },
+  {
+    "voice": "ryan",
+    "accent": "native_english",
+    "sentence_id": 0,
+    "text": "The weather forecast predicts heavy rain throughout the weekend.",
+    "file": "native_english/ryan/sentence_00.wav",
+    "generation_time_s": 1.09,
+    "file_size_kb": 150.0
+  },
+  {
+    "voice": "ryan",
+    "accent": "native_english",
+    "sentence_id": 1,
+    "text": "Could you please schedule a meeting for three thirty tomorrow afternoon?",
+    "file": "native_english/ryan/sentence_01.wav",
+    "generation_time_s": 1.43,
+    "file_size_kb": 255.0
+  },
+  {
+    "voice": "ryan",
+    "accent": "native_english",
+    "sentence_id": 2,
+    "text": "I've been studying artificial intelligence and machine learning for years.",
+    "file": "native_english/ryan/sentence_02.wav",
+    "generation_time_s": 1.39,
+    "file_size_kb": 195.0
+  },
+  {
+    "voice": "ryan",
+    "accent": "native_english",
+    "sentence_id": 3,
+    "text": "The restaurant on Fifth Avenue serves the best chocolate cake in town.",
+    "file": "native_english/ryan/sentence_03.wav",
+    "generation_time_s": 1.51,
+    "file_size_kb": 202.5
+  },
+  {
+    "voice": "ryan",
+    "accent": "native_english",
+    "sentence_id": 4,
+    "text": "She drove through the countryside enjoying the beautiful autumn leaves.",
+    "file": "native_english/ryan/sentence_04.wav",
+    "generation_time_s": 1.28,
+    "file_size_kb": 213.8
+  },
+  {
+    "voice": "ryan",
+    "accent": "native_english",
+    "sentence_id": 5,
+    "text": "We need to discuss the quarterly budget report before the deadline.",
+    "file": "native_english/ryan/sentence_05.wav",
+    "generation_time_s": 1.14,
+    "file_size_kb": 168.8
+  },
+  {
+    "voice": "ryan",
+    "accent": "native_english",
+    "sentence_id": 6,
+    "text": "The children were playing basketball in the park after school.",
+    "file": "native_english/ryan/sentence_06.wav",
+    "generation_time_s": 0.93,
+    "file_size_kb": 146.3
+  },
+  {
+    "voice": "ryan",
+    "accent": "native_english",
+    "sentence_id": 7,
+    "text": "Please remember to pick up some groceries on your way home tonight.",
+    "file": "native_english/ryan/sentence_07.wav",
+    "generation_time_s": 0.9,
+    "file_size_kb": 142.5
+  },
+  {
+    "voice": "ryan",
+    "accent": "native_english",
+    "sentence_id": 8,
+    "text": "The professor explained the theory of relativity in simple terms.",
+    "file": "native_english/ryan/sentence_08.wav",
+    "generation_time_s": 1.66,
+    "file_size_kb": 176.3
+  },
+  {
+    "voice": "ryan",
+    "accent": "native_english",
+    "sentence_id": 9,
+    "text": "Would you rather travel to Japan or visit the beaches in Thailand?",
+    "file": "native_english/ryan/sentence_09.wav",
+    "generation_time_s": 1.36,
+    "file_size_kb": 198.8
+  },
+  {
+    "voice": "aiden",
+    "accent": "native_english",
+    "sentence_id": 0,
+    "text": "The weather forecast predicts heavy rain throughout the weekend.",
+    "file": "native_english/aiden/sentence_00.wav",
+    "generation_time_s": 0.83,
+    "file_size_kb": 131.3
+  },
+  {
+    "voice": "aiden",
+    "accent": "native_english",
+    "sentence_id": 1,
+    "text": "Could you please schedule a meeting for three thirty tomorrow afternoon?",
+    "file": "native_english/aiden/sentence_01.wav",
+    "generation_time_s": 0.97,
+    "file_size_kb": 150.0
+  },
+  {
+    "voice": "aiden",
+    "accent": "native_english",
+    "sentence_id": 2,
+    "text": "I've been studying artificial intelligence and machine learning for years.",
+    "file": "native_english/aiden/sentence_02.wav",
+    "generation_time_s": 1.35,
+    "file_size_kb": 221.3
+  },
+  {
+    "voice": "aiden",
+    "accent": "native_english",
+    "sentence_id": 3,
+    "text": "The restaurant on Fifth Avenue serves the best chocolate cake in town.",
+    "file": "native_english/aiden/sentence_03.wav",
+    "generation_time_s": 1.48,
+    "file_size_kb": 191.3
+  },
+  {
+    "voice": "aiden",
+    "accent": "native_english",
+    "sentence_id": 4,
+    "text": "She drove through the countryside enjoying the beautiful autumn leaves.",
+    "file": "native_english/aiden/sentence_04.wav",
+    "generation_time_s": 1.41,
+    "file_size_kb": 187.5
+  },
+  {
+    "voice": "aiden",
+    "accent": "native_english",
+    "sentence_id": 5,
+    "text": "We need to discuss the quarterly budget report before the deadline.",
+    "file": "native_english/aiden/sentence_05.wav",
+    "generation_time_s": 0.92,
+    "file_size_kb": 146.3
+  },
+  {
+    "voice": "aiden",
+    "accent": "native_english",
+    "sentence_id": 6,
+    "text": "The children were playing basketball in the park after school.",
+    "file": "native_english/aiden/sentence_06.wav",
+    "generation_time_s": 1.11,
+    "file_size_kb": 153.8
+  },
+  {
+    "voice": "aiden",
+    "accent": "native_english",
+    "sentence_id": 7,
+    "text": "Please remember to pick up some groceries on your way home tonight.",
+    "file": "native_english/aiden/sentence_07.wav",
+    "generation_time_s": 0.86,
+    "file_size_kb": 135.0
+  },
+  {
+    "voice": "aiden",
+    "accent": "native_english",
+    "sentence_id": 8,
+    "text": "The professor explained the theory of relativity in simple terms.",
+    "file": "native_english/aiden/sentence_08.wav",
+    "generation_time_s": 1.17,
+    "file_size_kb": 172.5
+  },
+  {
+    "voice": "aiden",
+    "accent": "native_english",
+    "sentence_id": 9,
+    "text": "Would you rather travel to Japan or visit the beaches in Thailand?",
+    "file": "native_english/aiden/sentence_09.wav",
+    "generation_time_s": 1.21,
+    "file_size_kb": 180.0
+  }
+]

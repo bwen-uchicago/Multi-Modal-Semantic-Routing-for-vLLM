@@ -1,0 +1,92 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qwen3-tts-base
+  labels:
+    app: qwen3-tts-base
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: qwen3-tts-base
+  template:
+    metadata:
+      labels:
+        app: qwen3-tts-base
+    spec:
+      tolerations:
+      - key: nvidia.com/gpu.product
+        operator: Equal
+        value: NVIDIA-H100-80GB-HBM3
+        effect: NoSchedule
+      containers:
+      - name: vllm-omni
+        image: vllm/vllm-omni:v0.18.0
+        command: ["/bin/sh", "-c"]
+        args:
+        - |
+          pip install git+https://github.com/vllm-project/vllm-omni.git --upgrade && \
+          export PATH="/tmp/.local/bin:$PATH" && \
+          huggingface-cli download Qwen/Qwen3-TTS-12Hz-1.7B-Base --local-dir /models/Qwen3-TTS-12Hz-1.7B-Base && \
+          vllm serve /models/Qwen3-TTS-12Hz-1.7B-Base --omni --task-type Base \
+            --api-key $(VLLM_API_KEY) \
+            --host 0.0.0.0 --port 8000 --served-model-name qwen3-tts-base \
+            --trust-remote-code --enforce-eager
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        env:
+        - name: HOME
+          value: /tmp
+        - name: HF_HOME
+          value: /models/hf_home
+        - name: NUMBA_CACHE_DIR
+          value: /tmp/numba_cache
+        - name: MPLCONFIGDIR
+          value: /tmp/matplotlib
+        - name: VLLM_ALLOW_LONG_MAX_MODEL_LEN
+          value: "1"
+        - name: VLLM_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: vllm-api-key
+              key: api-key
+        resources:
+          requests:
+            cpu: "4"
+            memory: 16Gi
+            nvidia.com/gpu: "1"
+          limits:
+            cpu: "8"
+            memory: 32Gi
+            nvidia.com/gpu: "1"
+        volumeMounts:
+        - name: model-cache
+          mountPath: /models
+        - name: shm
+          mountPath: /dev/shm
+      volumes:
+      - name: model-cache
+        persistentVolumeClaim:
+          claimName: vllm-model-cache
+      - name: shm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 8Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: qwen3-tts-base
+  labels:
+    app: qwen3-tts-base
+spec:
+  selector:
+    app: qwen3-tts-base
+  ports:
+  - port: 8000
+    targetPort: 8000
+    protocol: TCP
+    name: http
+  type: ClusterIP

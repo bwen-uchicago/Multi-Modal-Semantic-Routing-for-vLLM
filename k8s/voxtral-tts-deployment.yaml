@@ -1,0 +1,101 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: voxtral-tts
+  labels:
+    app: voxtral-tts
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: voxtral-tts
+  template:
+    metadata:
+      labels:
+        app: voxtral-tts
+    spec:
+      tolerations:
+      - key: nvidia.com/gpu.product
+        operator: Equal
+        value: NVIDIA-H100-80GB-HBM3
+        effect: NoSchedule
+      containers:
+      - name: vllm-omni
+        image: vllm/vllm-omni:v0.18.0
+        command: ["/bin/sh", "-c"]
+        args:
+        - |
+          pip install git+https://github.com/vllm-project/vllm-omni.git --upgrade && \
+          vllm serve mistralai/Voxtral-4B-TTS-2603 --omni \
+            --api-key $(VLLM_API_KEY) \
+            --host 0.0.0.0 --port 8000 --served-model-name voxtral-tts \
+            --trust-remote-code --enforce-eager
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        env:
+        - name: HOME
+          value: /tmp
+        - name: HF_HOME
+          value: /tmp/hf_home
+        - name: NUMBA_CACHE_DIR
+          value: /tmp/numba_cache
+        - name: MPLCONFIGDIR
+          value: /tmp/matplotlib
+        - name: VLLM_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: vllm-api-key
+              key: api-key
+        resources:
+          requests:
+            cpu: "4"
+            memory: 16Gi
+            nvidia.com/gpu: "1"
+          limits:
+            cpu: "8"
+            memory: 32Gi
+            nvidia.com/gpu: "1"
+        volumeMounts:
+        - name: shm
+          mountPath: /dev/shm
+      volumes:
+      - name: shm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 8Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: voxtral-tts
+  labels:
+    app: voxtral-tts
+spec:
+  selector:
+    app: voxtral-tts
+  ports:
+  - port: 8000
+    targetPort: 8000
+    protocol: TCP
+    name: http
+  type: ClusterIP
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: voxtral-tts
+  annotations:
+    haproxy.router.openshift.io/timeout: 300s
+  labels:
+    app: voxtral-tts
+spec:
+  to:
+    kind: Service
+    name: voxtral-tts
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect

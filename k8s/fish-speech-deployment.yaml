@@ -1,0 +1,88 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fish-speech
+  labels:
+    app: fish-speech
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: fish-speech
+  template:
+    metadata:
+      labels:
+        app: fish-speech
+    spec:
+      tolerations:
+      - key: nvidia.com/gpu.product
+        operator: Equal
+        value: NVIDIA-H100-80GB-HBM3
+        effect: NoSchedule
+      containers:
+      - name: vllm-omni
+        image: vllm/vllm-omni:v0.18.0
+        command: ["/bin/sh", "-c"]
+        args:
+        - |
+          pip install git+https://github.com/vllm-project/vllm-omni.git --upgrade && \
+          pip install fish-speech --no-deps && \
+          pip install hydra-core omegaconf descript-audiotools descript-audio-codec && \
+          export PATH="/tmp/.local/bin:$PATH" && \
+          vllm serve fishaudio/s2-pro --omni \
+            --stage-configs-path /tmp/.local/lib/python3.12/site-packages/vllm_omni/model_executor/stage_configs/fish_speech_s2_pro.yaml \
+            --api-key $(VLLM_API_KEY) \
+            --host 0.0.0.0 --port 8000 --served-model-name fish-speech \
+            --trust-remote-code --enforce-eager \
+            --gpu-memory-utilization 0.9
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        env:
+        - name: HOME
+          value: /tmp
+        - name: HF_HOME
+          value: /tmp/hf_home
+        - name: NUMBA_CACHE_DIR
+          value: /tmp/numba_cache
+        - name: MPLCONFIGDIR
+          value: /tmp/matplotlib
+        - name: VLLM_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: vllm-api-key
+              key: api-key
+        resources:
+          requests:
+            cpu: "4"
+            memory: 16Gi
+            nvidia.com/gpu: "1"
+          limits:
+            cpu: "8"
+            memory: 32Gi
+            nvidia.com/gpu: "1"
+        volumeMounts:
+        - name: shm
+          mountPath: /dev/shm
+      volumes:
+      - name: shm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 8Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fish-speech
+  labels:
+    app: fish-speech
+spec:
+  selector:
+    app: fish-speech
+  ports:
+  - port: 8000
+    targetPort: 8000
+    protocol: TCP
+    name: http
+  type: ClusterIP

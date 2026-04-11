@@ -1,0 +1,91 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cosyvoice3
+  labels:
+    app: cosyvoice3
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: cosyvoice3
+  template:
+    metadata:
+      labels:
+        app: cosyvoice3
+    spec:
+      tolerations:
+      - key: nvidia.com/gpu.product
+        operator: Equal
+        value: NVIDIA-H100-80GB-HBM3
+        effect: NoSchedule
+      containers:
+      - name: vllm-omni
+        image: vllm/vllm-omni:v0.18.0
+        command: ["/bin/sh", "-c"]
+        args:
+        - |
+          pip install git+https://github.com/vllm-project/vllm-omni.git --upgrade && \
+          export PATH="/tmp/.local/bin:$PATH" && \
+          echo "Downloading model..." && \
+          huggingface-cli download FunAudioLLM/Fun-CosyVoice3-0.5B-2512 --local-dir /tmp/cosyvoice3-model && \
+          echo '{"model_type": "cosyvoice3"}' > /tmp/cosyvoice3-model/config.json && \
+          echo "Patched config.json with model_type=cosyvoice3" && \
+          STAGE_CFG=$(find /tmp/.local -path "*/stage_configs/cosyvoice3.yaml" -print -quit) && \
+          echo "Stage config: $STAGE_CFG" && \
+          vllm serve /tmp/cosyvoice3-model --omni \
+            --stage-configs-path "$STAGE_CFG" \
+            --api-key $(VLLM_API_KEY) \
+            --host 0.0.0.0 --port 8000 --served-model-name cosyvoice3 \
+            --trust-remote-code --enforce-eager
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        env:
+        - name: HOME
+          value: /tmp
+        - name: HF_HOME
+          value: /tmp/hf_home
+        - name: NUMBA_CACHE_DIR
+          value: /tmp/numba_cache
+        - name: MPLCONFIGDIR
+          value: /tmp/matplotlib
+        - name: VLLM_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: vllm-api-key
+              key: api-key
+        resources:
+          requests:
+            cpu: "4"
+            memory: 16Gi
+            nvidia.com/gpu: "1"
+          limits:
+            cpu: "8"
+            memory: 32Gi
+            nvidia.com/gpu: "1"
+        volumeMounts:
+        - name: shm
+          mountPath: /dev/shm
+      volumes:
+      - name: shm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 8Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cosyvoice3
+  labels:
+    app: cosyvoice3
+spec:
+  selector:
+    app: cosyvoice3
+  ports:
+  - port: 8000
+    targetPort: 8000
+    protocol: TCP
+    name: http
+  type: ClusterIP
